@@ -55,7 +55,7 @@ export default function Form() {
                         }
                     })
                 }
-                type="text" 
+                type="number" 
                 placeholder='+45 26262626'
                 />       
                 <FormError error={errors.phoneNumber} />
