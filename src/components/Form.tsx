@@ -28,7 +28,7 @@ export default function Form() {
     className='flex flex-col lg:flex-row gap-8'
     >
        <div
-       className='flex flex-col'
+       className='flex flex-col lg:w-2/4'
        >
             <label>
                 <span>Full name</span>
@@ -112,11 +112,25 @@ export default function Form() {
                 <FormError error={errors.preferred} />
             </label>
 
-            <button
-            className='px-4 py-2 bg-blue-700 mx-auto text-white font-bold rounded-md hover:opacity-75 transition-opacity mt-4'
-            >
-                Submit
-            </button>
+           <div
+           className='flex gap-2'
+           >
+                <button
+                className='px-4 py-2 bg-blue-700 text-white font-bold rounded-md hover:opacity-75 transition-opacity mt-4'
+                disabled={isSubmitting}
+                >
+                    Submit
+                </button>
+                <button
+                className='px-4 py-2 border border-blue-700 text-blue-700 font-bold rounded-md hover:opacity-75 transition-opacity mt-4'
+                type='button'
+                disabled={isSubmitting}
+                onClick={() => reset()}
+                >
+                    Reset
+                </button>
+           </div>
+
         </div>
 
         <div>
